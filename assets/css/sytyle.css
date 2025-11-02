@@ -70,14 +70,40 @@ body > div {
 
 /* ======= Toast message ======== */
 
+#toast {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+}
+
 .toast {
     display: flex;
     align-items: center;
     background-color: #fff;
     border-radius: 2px;
     padding: 20px 0;
+    min-width: 400px;
+    max-width: 450px;
     border-left: 4px solid;
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.8);
+    animation: slideInLeft ease .3s, fadeOut linear 1s 3s forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(calc(100% + 32px));
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
 
 .toast--success {
@@ -126,7 +152,7 @@ body > div {
 }
 
 .toast__body {
-    
+    flex-grow: 1;
 }
 
 .toast__title {
@@ -138,7 +164,8 @@ body > div {
 .toast__msg {
     font-size: 14px;
     color: #888;
-    margin-top: 4px;  
+    margin-top: 6px;  
+    line-height: 1.5;
 }
 
 .toast__close {
@@ -150,3 +177,4 @@ body > div {
 .toast__close:hover {
     opacity: 0.5;
 }
+
