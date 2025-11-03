@@ -11,25 +11,15 @@
 <body>
 
     <div id="toast">
-        <div class="toast toast--success">
-            <div class="toast__icon">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-    
-            <div class="toast__body">
-                <h3 class="toast__title">Success </h3>
-                <p class="toast__msg">Take your JavaScript development up a notch</p>
-            </div>
-    
-            <div class="toast__close">
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-        </div>
+        
     </div>
 
     <div>
-
+        <div onclick="showSuccessToast();" class="btn btn--success">Show success toast</div>
+        <div onclick="showErrorToast();" class="btn btn--danger">Show erorr toast</div>
     </div>
+
+    <script src="./assets/css/main.js"></script>
 
 </body>
 </html>
